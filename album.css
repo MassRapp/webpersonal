@@ -1,0 +1,373 @@
+/* Gaya untuk sidebar */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  padding-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  font-family: "Poppins", sans-serif;
+  z-index: 1000;
+}
+
+.sidebar.hidden {
+  left: -250px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px 20px;
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 30px;
+  margin: 0 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: all 0.5s;
+}
+
+.sidebar a:hover::before {
+  left: 100%;
+}
+
+.sidebar a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar i {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+/* Efek hover untuk ikon */
+.sidebar a:hover i {
+  transform: scale(1.2) rotate(360deg);
+  transition: transform 0.5s ease;
+}
+
+/* Animasi untuk bubble */
+@keyframes bubbleEffect {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sidebar a:hover {
+  animation: bubbleEffect 0.5s ease-in-out;
+}
+
+/* Gaya untuk tombol toggle sidebar */
+.toggle-sidebar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  color: #ecf0f1;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+.toggle-sidebar:hover {
+  background: linear-gradient(135deg, #34495e, #2c3e50);
+  transform: scale(1.1) rotate(180deg);
+}
+
+.toggle-sidebar.sidebar-hidden {
+  right: 270px;
+}
+
+/* Gaya untuk logo */
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 20px;
+  display: block;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.3);
+  border: 3px solid #ecf0f1;
+  transition: all 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+/* Gaya untuk background */
+body {
+  background-image: url("wpalbum.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Gaya untuk konten agar lebih kontras dengan background */
+.content {
+  background-color: rgba(44, 62, 80, 0.7);
+  color: #ecf0f1;
+  padding: 30px;
+  border-radius: 15px;
+  margin: 30px auto;
+  max-width: 1200px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+  font-family: "Roboto", sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  transition: all 0.5s ease;
+}
+
+.content:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Gaya untuk album container */
+.album-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  perspective: 1000px;
+}
+
+/* Gaya untuk item album */
+.album-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.album-item:hover {
+  transform: rotateY(10deg) translateZ(20px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.album-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.album-item:hover img {
+  transform: scale(1.1);
+}
+
+.album-item p {
+  padding: 15px;
+  text-align: center;
+  font-weight: 500;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  transition: all 0.3s ease;
+  transform: translateZ(30px);
+}
+
+.album-item:hover p {
+  padding-bottom: 25px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Gaya untuk slideshow */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Animasi fade untuk transisi foto */
+@keyframes fadeAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  20% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  33% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  53% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+.slide {
+  animation: fadeAnimation 15s infinite;
+}
+
+.slide:nth-child(1) {
+  animation-delay: 0s;
+}
+.slide:nth-child(2) {
+  animation-delay: 5s;
+}
+.slide:nth-child(3) {
+  animation-delay: 10s;
+}
+
+/* Animasi untuk judul */
+@keyframes titleAnimation {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.content h1 {
+  animation: titleAnimation 1s ease-out;
+}
+
+/* Efek hover untuk album item */
+.album-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.album-item:hover::after {
+  opacity: 1;
+}
+
+/* Animasi baru ketika menyentuh foto */
+@keyframes touchAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.album-item:active {
+  animation: touchAnimation 0.3s ease-in-out;
+}
+
+.album-item:active img {
+  filter: brightness(1.2) contrast(1.2);
+  transition: filter 0.3s ease;
+}
+
+.album-item:active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 0;
+  animation: rippleEffect 0.6s ease-out;
+}
+
+@keyframes rippleEffect {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}

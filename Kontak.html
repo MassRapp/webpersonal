@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontak Aa</title>
+    <link rel="stylesheet" href="kontak.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="sidebar">
+      <ul>
+        <li>
+          <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+        </li>
+        <li>
+          <a href="Tentang.html"><i class="fas fa-info-circle"></i> Tentang</a>
+        </li>
+        <li>
+          <a href="Kontak.html"><i class="fas fa-envelope"></i> Kontak</a>
+        </li>
+        <li>
+          <a href="Album.html"><i class="fas fa-images"></i> Album</a>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <h1>Hubungi Saya</h1>
+      <p>Silakan gunakan salah satu metode kontak di bawah ini:</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <p>Email: massrapp@gmail.com</p>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <p>Telepon: +62 821-3644-2487</p>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <p>WhatsApp: +62 821-3644-2487</p>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-instagram"></i>
+          <p>Instagram: @menyala.massrapp______</p>
+        </div>
+      </div>
+      <form class="contact-form">
+        <h2>Kirim Pesan</h2>
+        <input type="text" placeholder="Nama Anda" required />
+        <input type="email" placeholder="Email Anda" required />
+        <textarea placeholder="Pesan Anda" required></textarea>
+        <button type="submit">Kirim Pesan</button>
+      </form>
+    </div>
+    <button class="toggle-sidebar" onclick="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </button>
+    <script src="script.js"></script>
+  </body>
+</html>
